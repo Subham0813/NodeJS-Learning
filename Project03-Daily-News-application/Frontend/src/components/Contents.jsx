@@ -3,7 +3,7 @@ import Feed from "./Feed";
 
 const Contents = ({ loading, feeds, isDark }) => {
   return (
-    <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
+    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
       {loading ? (
         <p
           className={`text-xl font-semibold m-8 ${
@@ -19,7 +19,7 @@ const Contents = ({ loading, feeds, isDark }) => {
               .filter((feed) => feed.data[0].length > 0)
               .map((feed, index) => (
                 <div
-                  className={`max-w-lg border mx-auto p-5 rounded-3xl shadow-2xl m-8 flex flex-col items-center ${
+                  className={`border mx-auto p-5 rounded-3xl shadow-2xl m-6 flex flex-col items-center ${
                     isDark
                       ? "bg-gray-800 text-gray-300"
                       : "bg-stone-50 text-gray-700"
@@ -29,7 +29,7 @@ const Contents = ({ loading, feeds, isDark }) => {
                   <h1
                     className={`w-full text-5xl md:text-3xl text-center font-bold rounded-xl py-2 mb-2 ${
                       isDark
-                        ? "bg-orange-500 text-gray-900"
+                        ? "bg-orange-400 text-gray-900"
                         : "bg-orange-300 text-gray-700"
                     }`}
                   >

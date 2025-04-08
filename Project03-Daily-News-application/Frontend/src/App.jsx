@@ -52,38 +52,36 @@ function App() {
   }, [isDark]);
 
   return (
-    <main className="max-w-screen-xl">
+    <main>
       {serverError ? (
         <ErrorPage setServerError={setServerError} isDark={isDark} />
       ) : (
         <>
           <header
-            className={`w-screen mx-auto rounded-b-2xl shadow-2xl overflow-hidden ${
-              isDark
-                ? "bg-gray-800 text-gray-300"
-                : "bg-gray-300 text-gray-800"
+            className={`w-full rounded-b-2xl shadow-2xl overflow-hidden sticky top-0 z-50 ${
+              isDark ? "bg-gray-800 text-gray-300" : "bg-gray-300 text-gray-800"
             }`}
           >
             <section className="relative">
-            <h3
-              className={`px-5 py-3 text-8xl max-md:text-6xl font-extrabold cursor-pointer text-center ${
-                isDark ? "text-blue-600" : "text-blue-400"
-              }`}
-            >
-              Feed
-              <span
-                className={`text-xl max-md:text-base font-serif px-4 ${
-                  isDark ? "text-orange-500" : "text-orange-400"
+              <h3
+                className={`px-5 py-3 text-8xl max-md:text-6xl font-extrabold cursor-pointer text-center ${
+                  isDark ? "text-blue-600" : "text-blue-400"
                 }`}
               >
-                your daily need
-              </span>
-            </h3>
-            <ThemeButton isDark={isDark} setIsDark={setIsDark} />
+                Feed
+                <span
+                  className={`text-xl max-md:text-base font-serif px-4 ${
+                    isDark ? "text-orange-500" : "text-orange-400"
+                  }`}
+                >
+                  your daily need
+                </span>
+              </h3>
+              <ThemeButton isDark={isDark} setIsDark={setIsDark} />
             </section>
-            <Navbar setId={setId} isDark={isDark} setLoading={setLoading}/>
+            <Navbar setId={setId} isDark={isDark} setLoading={setLoading} />
           </header>
-          <Contents loading={loading} feeds={feeds} isDark={isDark}/>
+          <Contents loading={loading} feeds={feeds} isDark={isDark} />
         </>
       )}
     </main>

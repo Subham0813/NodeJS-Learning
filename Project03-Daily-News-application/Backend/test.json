@@ -16,7 +16,10 @@
     "feedUrls": [
       { "name": "BBC News", "url": "http://feeds.bbci.co.uk/news/rss.xml" },
       { "name": "CNN", "url": "http://rss.cnn.com/rss/edition.rss" },
-      { "name": "AP News", "url": "https://apnews.com/apf-topnews?format=rss" }
+      {
+        "name": "AP News",
+        "url": "https://www.apnews.com/rss/apf-topnews"
+      }
     ]
   },
   {

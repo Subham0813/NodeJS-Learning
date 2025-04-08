@@ -9,7 +9,7 @@ const Navbar = ({ setId, isDark, setLoading }) => {
 
   return (
     <nav
-      className={`w-full p-4 ${
+      className={`p-4 ${
         isDark ? "bg-gray-900 text-gray-200" : "bg-blue-400 text-white"
       }`}
     >
