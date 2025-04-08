@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs')%>
+
+    <title>Homepage</title>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs')%>
+    <div class="container mt-3">
+      <% blogs.forEach(blog => { %>
+      <div class="card" style="width: 18rem; margin-bottom: 6px">
+        <% if (blog.coverImageURL) { %>
+        <img
+          src="/public/uploads/_67dd7153a7cbe22609e0ff88/1742929638293Screenshot 2025-02-16 162419.png"
+          width="200"
+          height="200"
+        />
+        <% } %>
+        <div class="card-body">
+          <h6 class="card-title"><%= blog.title %></h6>
+          <p class="card-text"><%= blog.body %></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <%- include('./partials/scripts.ejs')%>
+  </body>
+</html>
