@@ -1,0 +1,15 @@
+REST api- JSON
+
+GET /users => list all users
+
+GET /users/id => Get the user with id
+
+POST /users => create a new user ==> need PostMan Api
+
+PATCH /users/id => edit the user with id  ==> need PostMan Api
+
+DELETE /users/id => Delete the user with id  ==> need PostMan Api
+
+we need data for all these op
+
+to get data => visit https://www.mockaroo.com/

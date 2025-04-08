@@ -1,0 +1,38 @@
+{
+  "Tech News": {
+    "TechCrunch": "https://techcrunch.com/feed/",
+    "The Verge": "https://www.theverge.com/rss/index.xml",
+    "Hacker News": "https://hnrss.org/newest",
+    "Ars Technica": "https://feeds.arstechnica.com/arstechnica/index"
+  },
+  "General News": {
+    "BBC News": "http://feeds.bbci.co.uk/news/rss.xml",
+    "Reuters": "https://www.reutersagency.com/feed/?best-regions=north-america&post_type=best",
+    "CNN": "http://rss.cnn.com/rss/edition.rss"
+  },
+  "Programming and Development": {
+    "Reddit (Programming)": "https://www.reddit.com/r/programming/.rss",
+    "Smashing Magazine": "https://www.smashingmagazine.com/feed/",
+    "FreeCodeCamp News": "https://www.freecodecamp.org/news/rss/"
+  },
+  "Entertainment and Lifestyle": {
+    "IGN (Gaming and Entertainment)": "http://feeds.ign.com/ign/all",
+    "Mashable": "https://mashable.com/feeds/rss/",
+    "Buzzfeed": "https://www.buzzfeed.com/index.xml"
+  },
+  "Science and Education": {
+    "NASA Breaking News": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+    "Scientific American": "https://www.scientificamerican.com/rss/",
+    "National Geographic": "https://www.nationalgeographic.com/content/natgeo/en_us/news.rss"
+  },
+  "Finance and Business": {
+    "Bloomberg": "https://www.bloomberg.com/feed",
+    "The Wall Street Journal (Markets)": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",
+    "Forbes": "https://www.forbes.com/real-time/feed2/"
+  },
+  "Sports": {
+    "ESPN": "https://www.espn.com/espn/rss/news",
+    "Sky Sports": "https://www.skysports.com/rss/12040",
+    "Bleacher Report": "https://bleacherreport.com/articles/feed"
+  }
+}
