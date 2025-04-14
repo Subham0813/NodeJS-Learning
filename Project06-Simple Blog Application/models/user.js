@@ -1,7 +1,5 @@
 const { createHmac, randomBytes } = require("crypto");
-const { model } = require("mongoose");
-
-const Schema = require("mongoose").Schema;
+const { model , Schema} = require("mongoose");
 
 const userSchema = new Schema(
   {

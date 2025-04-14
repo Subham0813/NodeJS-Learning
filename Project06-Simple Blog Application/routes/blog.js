@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const { checkForAuthCookie } = require("../middleware/auth");
-const { handleAddingNewBlog } = require("../controllers/blog");
+const { handleAddingNewBlog, handleGetBlog } = require("../controllers/blog");
 const { upload } = require("../services/fileUpload");
 
 const router = Router();

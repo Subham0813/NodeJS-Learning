@@ -11,13 +11,18 @@ const createTokenForUser = (user) => {
     role: user.role,
   };
 
-  const token = jwt.sign(payload, secretKey, { expiresIn: "1h" });
+  const token = jwt.sign(payload, secretKey, { expiresIn: "10h" });
   return token;
 };
 
 const validateToken = (token) => {
-  const payload = jwt.verify(token, secretKey);
-  return payload;
+  try {
+    const payload = jwt.verify(token, secretKey);
+    return payload;
+  } catch (err) {
+    console.log("JWT Error:", err.message);
+    return null; // Token is either invalid or expired
+  }
 };
 
 module.exports = {

@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Blog = require("../models/blog");
 const { createHmac } = require("crypto");
 const { createTokenForUser } = require("../services/auth");
 
@@ -14,7 +15,10 @@ async function handleSignUp(req, res) {
     return res.redirect("/signin");
   } catch (err) {
     console.log(err)
-    return res.status(500).render('signup',{ error: err });
+    if (err.code === 11000 && err.keyPattern && err.keyPattern.email) {
+      return res.render('signin', {error : 'Email already exists. Please  Login.'});
+    }
+    return res.status(500).render('signup',{ error: 'Something went wrong' });
   }
 }
 async function handleSignIn(req, res) {
@@ -22,7 +26,7 @@ async function handleSignIn(req, res) {
 
   try {
     const user = await User.findOne({ email: email });
-
+    const blogs = await Blog.find({})
     if (!user)
       return res.render("signin", {
         error: "Incorrect email, User not found..",
@@ -41,7 +45,10 @@ async function handleSignIn(req, res) {
     // res.json({ user: user });
 
     const token = createTokenForUser(user);
-    return res.cookie("token", token).redirect("/");
+    return res.cookie("token", token).render("home", {
+      user : user,
+      blogs : blogs
+    });
   } catch (e) {
     console.log(e)
     return res.render("signin", {

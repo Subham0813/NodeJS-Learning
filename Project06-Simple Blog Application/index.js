@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 //   loggedUser = req.user;
 //   next();
 // });
-app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'services/public/uploads/')));
 
 app.get("/signup", (req, res) => {
   res.render("signup");

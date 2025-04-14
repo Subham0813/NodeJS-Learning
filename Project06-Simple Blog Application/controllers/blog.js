@@ -14,12 +14,14 @@ async function handleAddingNewBlog(req, res) {
   const blog = await Blog.create({
     title,
     body,
-    coverImageURL: `/uploads/${req.user._id}/${req.file.filename}`,
+    coverImageURL: `/uploads/_${req.user._id}/${req.file.filename}`,
     createdBy: req.user._id,
   });
 
-  return res.redirect(`/user/blog/${blog._id}`);
+  return res.redirect(`/`);
 }
+
+
 module.exports = {
   handleAddingNewBlog,
 };

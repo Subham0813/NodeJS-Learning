@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs')%>
+
+    <title>Blogpage</title>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs')%>
+
+    <div class="container my-5">
+      <!-- Blog Card -->
+      <div class="card">
+        <!-- Blog Image -->
+        <img
+          src="<%= blog.coverImageURL %>"
+          class="card-img-top"
+          alt="Blog Cover Image"
+        />
+
+        <!-- Blog Content -->
+        <div class="card-body">
+          <h2 class="card-title"><%= blog.title %></h2>
+          <p class="text-muted">
+            Created by <strong><%= blog.createdBy.fullname %></strong> · <%= new
+            Date(blog.createdBy.createdAt).toLocaleDateString('en-US', { year:
+            'numeric', month: 'long', day: 'numeric' }) %>
+          </p>
+          <hr />
+          <p class="card-text"><%= blog.body %></p>
+        </div>
+      </div>
+      <% if (blog.cratedBy) { %>
+       
+      <% } %>
+      <!-- Comment Section -->
+      <div class="mt-5">
+        <h5>Leave a Comment</h5>
+        <form>
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              rows="4"
+              placeholder="Write your comment here..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Post Comment</button>
+        </form>
+      </div>
+    </div>
+
+    <%- include('./partials/scripts.ejs')%>
+  </body>
+</html>

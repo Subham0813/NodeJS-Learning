@@ -6,7 +6,10 @@ function checkForAuthCookie(cookieName) {
     if (!token) return res.render("signup");
 
     const userPayload = validateToken(token);
-    if (!userPayload) return res.render("signup");
+    if (!userPayload) {
+      res.clearCookie(cookieName);
+      return res.render("signup");
+    }
 
     req.user = userPayload
     next()
