@@ -20,7 +20,6 @@ const validateToken = (token) => {
     const payload = jwt.verify(token, secretKey);
     return payload;
   } catch (err) {
-    console.log("JWT Error:", err.message);
     return null; // Token is either invalid or expired
   }
 };

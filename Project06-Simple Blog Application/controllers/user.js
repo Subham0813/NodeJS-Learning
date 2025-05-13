@@ -14,7 +14,6 @@ async function handleSignUp(req, res) {
     });
     return res.redirect("/signin");
   } catch (err) {
-    console.log(err)
     if (err.code === 11000 && err.keyPattern && err.keyPattern.email) {
       return res.render('signin', {error : 'Email already exists. Please  Login.'});
     }
@@ -50,7 +49,6 @@ async function handleSignIn(req, res) {
       blogs : blogs
     });
   } catch (e) {
-    console.log(e)
     return res.render("signin", {
       error: "Incorrect Email or Password..",
     });

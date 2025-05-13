@@ -1,5 +1,5 @@
 const { createHmac, randomBytes } = require("crypto");
-const { model , Schema} = require("mongoose");
+const { model, Schema } = require("mongoose");
 
 const userSchema = new Schema(
   {
@@ -23,7 +23,7 @@ const userSchema = new Schema(
     },
     profileImageURL: {
       type: String,
-      default: "../public/images/profileImage.png",
+      default: "/images/profileImage.png",
     },
     role: {
       type: String,
